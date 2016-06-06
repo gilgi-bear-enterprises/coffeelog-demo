@@ -4,6 +4,7 @@ import { Routes, ROUTER_DIRECTIVES } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ApparatusSelectionComponent } from './apparatus-selection/apparatus-selection.component';
 import { BeanSelectionComponent } from './bean-selection/bean-selection.component';
+import { BrewPlanningComponent } from './brew-planning/brew-planning.component';
 
 @Component({
   moduleId: module.id,
@@ -15,7 +16,8 @@ import { BeanSelectionComponent } from './bean-selection/bean-selection.componen
 @Routes([
     { path: '/', component: HomeComponent },
     { path: '/brew', component: ApparatusSelectionComponent },
-    { path: '/beans', component: BeanSelectionComponent }
+    { path: '/beans', component: BeanSelectionComponent },
+    { path: '/plan', component: BrewPlanningComponent }
 ])
 export class CoffeelogAppComponent {
   title = 'coffeelog works!';

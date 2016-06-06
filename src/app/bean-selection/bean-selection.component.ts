@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
 
 import { BrewService } from '../brew.service'
 
@@ -11,7 +12,7 @@ import { BrewService } from '../brew.service'
 })
 export class BeanSelectionComponent implements OnInit {
 
-  constructor(private brewService: BrewService) {}
+  constructor(private brewService: BrewService, private router: Router) {}
 
   ngOnInit() {
      console.log("apparatus is " + this.brewService.getApparatus());
@@ -19,6 +20,15 @@ export class BeanSelectionComponent implements OnInit {
   
   getApparatus() {
     return this.brewService.getApparatus();
+  }
+  
+  goBack() {
+    this.router.navigateByUrl('/brew');
+  }
+  
+  goNext(beans: string) {
+    this.brewService.setBeans(beans);
+    this.router.navigateByUrl('/plan');
   }
 
 }

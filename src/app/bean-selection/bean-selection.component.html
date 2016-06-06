@@ -1,4 +1,9 @@
 <p>
   bean-selection works!
-  you selected {{getApparatus()}}
 </p>
+<p>
+  brewing on {{getApparatus()}}
+</p>
+<button (click)="goBack()">Back</button>
+<input type="text" #beans placeholder="beans" />
+<button (click)="goNext(beans.value)">Next</button>
