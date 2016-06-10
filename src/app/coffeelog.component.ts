@@ -14,11 +14,11 @@ import { BrewPlanningComponent } from './brew-planning/brew-planning.component';
   directives: [ROUTER_DIRECTIVES]
 })
 @Routes([
-    { path: '/', component: HomeComponent },
+    { path: '/home', component: HomeComponent },
     { path: '/brew', component: ApparatusSelectionComponent },
     { path: '/beans', component: BeanSelectionComponent },
     { path: '/plan', component: BrewPlanningComponent }
 ])
 export class CoffeelogAppComponent {
-  title = 'coffeelog works!';
+  title = 'Coffee Log';
 }
