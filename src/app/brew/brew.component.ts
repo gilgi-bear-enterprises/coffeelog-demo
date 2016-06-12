@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SetupComponent } from './setup';
-import { Routes , ROUTER_DIRECTIVES} from '@angular/router';
+import { Routes , Router, ROUTER_DIRECTIVES} from '@angular/router';
 import { ExecuteComponent } from './execute';
 import { LogComponent } from './log';
 
@@ -18,9 +18,9 @@ import { LogComponent } from './log';
 ])
 export class BrewComponent implements OnInit {
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
   }
-
+  
 }

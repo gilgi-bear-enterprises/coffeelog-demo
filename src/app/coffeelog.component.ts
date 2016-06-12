@@ -18,14 +18,9 @@ import { HomeComponent } from './home/home.component';
     { path: '/', component: HomeComponent },
     { path: '/brew', component: BrewComponent}
 ])
-export class CoffeelogAppComponent implements OnActivate {
+export class CoffeelogAppComponent {
   title = 'Coffee Log';
-  routeSegment : RouteSegment;
   constructor(private router: Router) {};
-  
-  routerOnActivate(curr : RouteSegment) {
-      this.routeSegment = curr;
-  }
 
   isSelectedRoute(routePath: string) {
      let currentRoute = this.router.urlTree.firstChild(this.router.urlTree.root);
