@@ -3,13 +3,15 @@ import { SetupComponent } from './setup';
 import { Routes , Router, ROUTER_DIRECTIVES} from '@angular/router';
 import { ExecuteComponent } from './execute';
 import { LogComponent } from './log';
+import { BrewService } from './brew.service';
 
 @Component({
   moduleId: module.id,
   selector: 'app-brew',
   templateUrl: 'brew.component.html',
   styleUrls: ['brew.component.css'],
-  directives: [ROUTER_DIRECTIVES]
+  directives: [ROUTER_DIRECTIVES],
+  providers: [BrewService]
 })
 @Routes([
   {path: '/setup', component: SetupComponent},
@@ -18,7 +20,7 @@ import { LogComponent } from './log';
 ])
 export class BrewComponent implements OnInit {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private brewService: BrewService) {}
 
   ngOnInit() {
   }

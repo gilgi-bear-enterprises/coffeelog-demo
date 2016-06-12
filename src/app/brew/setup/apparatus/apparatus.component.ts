@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { BrewService } from '../../brew.service';
+
 @Component({
   moduleId: module.id,
   selector: 'app-apparatus',
@@ -8,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApparatusComponent implements OnInit {
 
-  constructor() {}
+  constructor(private brewService: BrewService) {}
 
   ngOnInit() {
+  }
+
+  selectApparatus(apparatus: string) {
+    this.brewService.brew.apparatus = apparatus;
   }
 
 }

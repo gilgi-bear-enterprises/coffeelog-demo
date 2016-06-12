@@ -3,6 +3,9 @@ import { Routes , ROUTER_DIRECTIVES} from '@angular/router';
 import { ApparatusComponent } from './apparatus';
 import { BeansComponent } from './beans';
 
+import { Brew } from '../brew.model';
+import { BrewService } from '../brew.service';
+
 @Component({
   moduleId: module.id,
   selector: 'app-setup',
@@ -16,7 +19,11 @@ import { BeansComponent } from './beans';
 ])
 export class SetupComponent implements OnInit {
 
-  constructor() {}
+  brew: Brew;
+
+  constructor(private brewService: BrewService) {
+    this.brew = this.brewService.brew;
+  }
 
   ngOnInit() {
   }
