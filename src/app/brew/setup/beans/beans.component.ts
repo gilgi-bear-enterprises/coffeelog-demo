@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {FORM_DIRECTIVES} from '@angular/common';
+
+import { Brew } from '../../brew.model';
+import { BrewService } from '../../brew.service';
 
 @Component({
   moduleId: module.id,
@@ -8,7 +12,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BeansComponent implements OnInit {
 
-  constructor() {}
+  brew: Brew;
+  
+  constructor(private brewService: BrewService) {
+      this.brew = this.brewService.brew;
+  }
 
   ngOnInit() {
   }
