@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Routes, ROUTER_DIRECTIVES } from '@angular/router';
+import { NgClass } from '@angular/common';
+import { Routes, Router, RouteSegment, OnActivate, ROUTER_DIRECTIVES } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { ApparatusSelectionComponent } from './apparatus-selection/apparatus-selection.component';
@@ -11,14 +12,29 @@ import { BrewPlanningComponent } from './brew-planning/brew-planning.component';
   selector: 'coffeelog-app',
   templateUrl: 'coffeelog.component.html',
   styleUrls: ['coffeelog.component.css'],
-  directives: [ROUTER_DIRECTIVES]
+  directives: [ROUTER_DIRECTIVES, NgClass],
+
 })
+
 @Routes([
-    { path: '/home', component: HomeComponent },
+    { path: '/', component: HomeComponent },
     { path: '/brew', component: ApparatusSelectionComponent },
     { path: '/beans', component: BeanSelectionComponent },
     { path: '/plan', component: BrewPlanningComponent }
 ])
-export class CoffeelogAppComponent {
+export class CoffeelogAppComponent implements OnActivate {
   title = 'Coffee Log';
+  routeSegment : RouteSegment;
+  constructor(private router: Router) {};
+  
+  routerOnActivate(current : RouteSegment) {
+      this.routeSegment = current;
+  }
+  
+  isSelectedRoute(routeURL: string){
+   console.log("The routeURL is: " + routeURL);
+   console.log("The route segment is: " + this.routeSegment);
+   console.log("The routeURL tree is: " + this.router.createUrlTree([routeURL, this.routeSegment]));
+   return this.router.urlTree.contains(this.router.createUrlTree([routeURL, this.routeSegment]));
+  }
 }

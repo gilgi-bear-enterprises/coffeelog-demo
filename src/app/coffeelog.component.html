@@ -4,10 +4,10 @@
     </h1>
 
     <ul class="nav nav-pills">
-        <li>
-            <a [routerLink]="['/home']">Home</a>
+        <li [ngClass]="{active: isSelectedRoute('/')}">
+            <a [routerLink]="['/']">Home</a>
         </li>
-        <li>
+        <li [ngClass]="{active: isSelectedRoute('/brew')}">
             <a [routerLink]="['/brew']">Brew</a>
         </li>
     </ul>
