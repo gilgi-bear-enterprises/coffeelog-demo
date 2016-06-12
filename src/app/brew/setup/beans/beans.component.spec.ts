@@ -9,25 +9,25 @@ import {
 import { ComponentFixture, TestComponentBuilder } from '@angular/compiler/testing';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { BrewPlanningComponent } from './brew-planning.component';
+import { BeansComponent } from './beans.component';
 
-describe('Component: BrewPlanning', () => {
+describe('Component: Beans', () => {
   let builder: TestComponentBuilder;
 
-  beforeEachProviders(() => [BrewPlanningComponent]);
+  beforeEachProviders(() => [BeansComponent]);
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder) {
     builder = tcb;
   }));
 
-  it('should inject the component', inject([BrewPlanningComponent],
-      (component: BrewPlanningComponent) => {
+  it('should inject the component', inject([BeansComponent],
+      (component: BeansComponent) => {
     expect(component).toBeTruthy();
   }));
 
   it('should create the component', inject([], () => {
-    return builder.createAsync(BrewPlanningComponentTestController)
+    return builder.createAsync(BeansComponentTestController)
       .then((fixture: ComponentFixture<any>) => {
-        let query = fixture.debugElement.query(By.directive(BrewPlanningComponent));
+        let query = fixture.debugElement.query(By.directive(BeansComponent));
         expect(query).toBeTruthy();
         expect(query.componentInstance).toBeTruthy();
       });
@@ -37,10 +37,10 @@ describe('Component: BrewPlanning', () => {
 @Component({
   selector: 'test',
   template: `
-    <app-brew-planning></app-brew-planning>
+    <app-beans></app-beans>
   `,
-  directives: [BrewPlanningComponent]
+  directives: [BeansComponent]
 })
-class BrewPlanningComponentTestController {
+class BeansComponentTestController {
 }
 

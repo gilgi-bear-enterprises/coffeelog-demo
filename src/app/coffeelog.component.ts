@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { Routes, Router, RouteSegment, UrlSegment, OnActivate, ROUTER_DIRECTIVES } from '@angular/router';
+import { BrewComponent } from './brew';
 
 import { HomeComponent } from './home/home.component';
 import { ApparatusSelectionComponent } from './apparatus-selection/apparatus-selection.component';
@@ -18,9 +19,7 @@ import { BrewPlanningComponent } from './brew-planning/brew-planning.component';
 
 @Routes([
     { path: '/', component: HomeComponent },
-    { path: '/brew', component: ApparatusSelectionComponent },
-    { path: '/beans', component: BeanSelectionComponent },
-    { path: '/plan', component: BrewPlanningComponent }
+    { path: '/brew', component: BrewComponent}
 ])
 export class CoffeelogAppComponent implements OnActivate {
   title = 'Coffee Log';

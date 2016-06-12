@@ -9,25 +9,25 @@ import {
 import { ComponentFixture, TestComponentBuilder } from '@angular/compiler/testing';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { ApparatusSelectionComponent } from './apparatus-selection.component';
+import { ApparatusComponent } from './apparatus.component';
 
-describe('Component: ApparatusSelection', () => {
+describe('Component: Apparatus', () => {
   let builder: TestComponentBuilder;
 
-  beforeEachProviders(() => [ApparatusSelectionComponent]);
+  beforeEachProviders(() => [ApparatusComponent]);
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder) {
     builder = tcb;
   }));
 
-  it('should inject the component', inject([ApparatusSelectionComponent],
-      (component: ApparatusSelectionComponent) => {
+  it('should inject the component', inject([ApparatusComponent],
+      (component: ApparatusComponent) => {
     expect(component).toBeTruthy();
   }));
 
   it('should create the component', inject([], () => {
-    return builder.createAsync(ApparatusSelectionComponentTestController)
+    return builder.createAsync(ApparatusComponentTestController)
       .then((fixture: ComponentFixture<any>) => {
-        let query = fixture.debugElement.query(By.directive(ApparatusSelectionComponent));
+        let query = fixture.debugElement.query(By.directive(ApparatusComponent));
         expect(query).toBeTruthy();
         expect(query.componentInstance).toBeTruthy();
       });
@@ -37,10 +37,10 @@ describe('Component: ApparatusSelection', () => {
 @Component({
   selector: 'test',
   template: `
-    <app-apparatus-selection></app-apparatus-selection>
+    <app-apparatus></app-apparatus>
   `,
-  directives: [ApparatusSelectionComponent]
+  directives: [ApparatusComponent]
 })
-class ApparatusSelectionComponentTestController {
+class ApparatusComponentTestController {
 }
 

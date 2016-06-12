@@ -9,25 +9,25 @@ import {
 import { ComponentFixture, TestComponentBuilder } from '@angular/compiler/testing';
 import { Component } from '@angular/core';
 import { By } from '@angular/platform-browser';
-import { BeanSelectionComponent } from './bean-selection.component';
+import { LogComponent } from './log.component';
 
-describe('Component: BeanSelection', () => {
+describe('Component: Log', () => {
   let builder: TestComponentBuilder;
 
-  beforeEachProviders(() => [BeanSelectionComponent]);
+  beforeEachProviders(() => [LogComponent]);
   beforeEach(inject([TestComponentBuilder], function (tcb: TestComponentBuilder) {
     builder = tcb;
   }));
 
-  it('should inject the component', inject([BeanSelectionComponent],
-      (component: BeanSelectionComponent) => {
+  it('should inject the component', inject([LogComponent],
+      (component: LogComponent) => {
     expect(component).toBeTruthy();
   }));
 
   it('should create the component', inject([], () => {
-    return builder.createAsync(BeanSelectionComponentTestController)
+    return builder.createAsync(LogComponentTestController)
       .then((fixture: ComponentFixture<any>) => {
-        let query = fixture.debugElement.query(By.directive(BeanSelectionComponent));
+        let query = fixture.debugElement.query(By.directive(LogComponent));
         expect(query).toBeTruthy();
         expect(query.componentInstance).toBeTruthy();
       });
@@ -37,10 +37,10 @@ describe('Component: BeanSelection', () => {
 @Component({
   selector: 'test',
   template: `
-    <app-bean-selection></app-bean-selection>
+    <app-log></app-log>
   `,
-  directives: [BeanSelectionComponent]
+  directives: [LogComponent]
 })
-class BeanSelectionComponentTestController {
+class LogComponentTestController {
 }
 

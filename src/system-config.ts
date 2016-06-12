@@ -29,10 +29,14 @@ const barrels: string[] = [
   // App specific barrels.
   'app',
   'app/shared',
-  'app/apparatus-selection',
-  'app/bean-selection',
-  'app/brew-planning',
   'app/home',
+  'app/brew',
+  'app/brew/setup',
+  'app/brew/execute',
+  'app/brew/log',
+  'app/brew/setup/apparatus',
+  'app/brew/setup/beans'
+
   /** @cli-barrel */
 ];
 
