@@ -4,9 +4,6 @@ import { Routes, Router, RouteSegment, UrlSegment, OnActivate, ROUTER_DIRECTIVES
 import { BrewComponent } from './brew';
 
 import { HomeComponent } from './home/home.component';
-import { ApparatusSelectionComponent } from './apparatus-selection/apparatus-selection.component';
-import { BeanSelectionComponent } from './bean-selection/bean-selection.component';
-import { BrewPlanningComponent } from './brew-planning/brew-planning.component';
 
 @Component({
   moduleId: module.id,
