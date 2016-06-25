@@ -1,4 +1,4 @@
-import {Apparatus} from './apparatus.model';
+import { Apparatus } from './apparatus.model';
 
 export var APPARATUSES: Apparatus[] = [
   {name: 'Chemex', 

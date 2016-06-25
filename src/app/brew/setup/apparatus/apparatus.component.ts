@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { BrewService } from '../../brew.service';
+import { Apparatus } from '../../apparatus.model';
+import { ApparatusService } from '../../apparatus.service';
 
 @Component({
   moduleId: module.id,
@@ -10,9 +12,16 @@ import { BrewService } from '../../brew.service';
 })
 export class ApparatusComponent implements OnInit {
 
-  constructor(private brewService: BrewService) {}
+  apparatuses: Apparatus[];
+
+  constructor(private brewService: BrewService, private apparatusService: ApparatusService) {}
 
   ngOnInit() {
+    this.getApparatuses();
+  }
+
+  getApparatuses() {
+    this.apparatusService.getApparatuses().then(apparatuses => this.apparatuses = apparatuses);
   }
 
   selectApparatus(apparatus: string) {
