@@ -1,3 +1,5 @@
+import {Apparatus} from './apparatus.model';
+
 export var APPARATUSES: Apparatus[] = [
   {name: 'Chemex', 
    imgURL: '../../../img/chemex.png',
