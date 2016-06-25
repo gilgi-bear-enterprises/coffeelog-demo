@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Brew } from '../../brew.model';
+import { BrewService } from '../../brew.service';
+
 @Component({
   moduleId: module.id,
   selector: 'app-plan',
@@ -8,9 +11,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlanComponent implements OnInit {
 
-  constructor() {}
+  brew: Brew;
+
+  constructor(private brewService: BrewService) {
+    this.brew = this.brewService.brew;
+  }
 
   ngOnInit() {
+
   }
 
 }

@@ -15,10 +15,11 @@ export class BeansComponent implements OnInit {
   brew: Brew;
   
   constructor(private brewService: BrewService) {
-      this.brew = this.brewService.brew;
+    this.brew = this.brewService.brew;
   }
 
   ngOnInit() {
+  
   }
 
 }
