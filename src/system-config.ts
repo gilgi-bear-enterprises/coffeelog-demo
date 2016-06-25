@@ -35,8 +35,8 @@ const barrels: string[] = [
   'app/brew/execute',
   'app/brew/log',
   'app/brew/setup/apparatus',
-  'app/brew/setup/beans'
-
+  'app/brew/setup/beans',
+  'app/brew/setup/plan'
   /** @cli-barrel */
 ];
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Routes , ROUTER_DIRECTIVES} from '@angular/router';
 import { ApparatusComponent } from './apparatus';
 import { BeansComponent } from './beans';
+import { PlanComponent } from './plan';
 
 import { Brew } from '../brew.model';
 import { BrewService } from '../brew.service';
@@ -15,7 +16,8 @@ import { BrewService } from '../brew.service';
 })
 @Routes([
   {path: '/apparatus', component: ApparatusComponent},
-  {path: '/beans', component: BeansComponent}
+  {path: '/beans', component: BeansComponent},
+  {path: '/plan', component: PlanComponent}
 ])
 export class SetupComponent implements OnInit {
 
