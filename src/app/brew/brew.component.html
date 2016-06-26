@@ -1,17 +1,14 @@
-<p>
-  brew works!
-</p>
-
-<ul>
-    <li>
+<ul class="nav nav-pills">
+    <li [ngClass]="{active: isSelectedRoute('setup')}">
         <a [routerLink]="['setup']">Setup</a>
     </li>
-    <li>
+    <li [ngClass]="{active: isSelectedRoute('execute')}">
         <a [routerLink]="['execute']">Execute</a>
     </li>
-    <li>
+    <li [ngClass]="{active: isSelectedRoute('log')}">
         <a [routerLink]="['log']">Log</a>
     </li>
 </ul>
+
 
 <router-outlet></router-outlet>

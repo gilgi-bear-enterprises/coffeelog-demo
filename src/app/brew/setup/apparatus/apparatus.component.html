@@ -1,12 +1,8 @@
-<p>
-  apparatus works!
-</p>
-
-<h2>Apparatuses</h2>
-
-<div>
-  <img *ngFor="let apparatus of apparatuses" 
-       src="{{ apparatus.imgURL }}" 
-       class="img-responsive img-thumbnail" 
-       (click)="selectApparatus( apparatus.name )">
-</div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Apparatuses</h3>
+    </div>
+    <div class="panel-body">
+      <img *ngFor="let apparatus of apparatuses" src="{{ apparatus.imgURL }}" class="img-responsive img-thumbnail" (click)="selectApparatus( apparatus.name )">
+    </div>
+  </div>

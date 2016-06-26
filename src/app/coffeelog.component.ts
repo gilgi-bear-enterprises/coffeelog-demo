@@ -19,7 +19,7 @@ import { HomeComponent } from './home/home.component';
     { path: '/brew', component: BrewComponent}
 ])
 export class CoffeelogAppComponent {
-  title = 'Coffee Log';
+  
   constructor(private router: Router) {};
 
   isSelectedRoute(routePath: string) {

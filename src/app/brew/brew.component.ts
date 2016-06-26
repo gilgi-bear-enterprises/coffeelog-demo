@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgClass } from '@angular/common';
 import { SetupComponent } from './setup';
 import { Routes , Router, ROUTER_DIRECTIVES} from '@angular/router';
 import { ExecuteComponent } from './execute';
@@ -11,7 +12,7 @@ import { ApparatusService } from './apparatus.service';
   selector: 'app-brew',
   templateUrl: 'brew.component.html',
   styleUrls: ['brew.component.css'],
-  directives: [ROUTER_DIRECTIVES],
+  directives: [ROUTER_DIRECTIVES, NgClass],
   providers: [BrewService, ApparatusService]
 })
 @Routes([
@@ -25,5 +26,10 @@ export class BrewComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+
+  isSelectedRoute(routePath: string) {
+     let currentRoute = this.router.urlTree.firstChild(this.router.urlTree.firstChild(this.router.urlTree.root));
+     let segment = currentRoute == null ? '/' : currentRoute.segment;
+     return  segment == routePath;
+  }
 }

@@ -1,9 +1,6 @@
-<div class="container-fluid">
-    <h1>
-    {{title}}
-    </h1>
-
-    <ul class="nav nav-pills">
+<nav class="navbar navbar-default">
+  <div class="container">
+    <ul class="nav navbar-nav">
         <li [ngClass]="{active: isSelectedRoute('/')}">
             <a [routerLink]="['/']">Home</a>
         </li>
@@ -11,7 +8,11 @@
             <a [routerLink]="['/brew']">Brew</a>
         </li>
     </ul>
-    <div class="router-outlet">
+  </div>
+</nav>
+
+<div class="container">
+<div class="router-outlet">
     <router-outlet></router-outlet>
     </div>
 </div>
