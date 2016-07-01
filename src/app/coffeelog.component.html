@@ -1,10 +1,10 @@
 <nav class="navbar navbar-default">
   <div class="container">
     <ul class="nav navbar-nav">
-        <li [ngClass]="{active: isSelectedRoute('/')}">
-            <a [routerLink]="['/']">Home</a>
+        <li routerLinkActive="active">
+            <a [routerLink]="['/home']">Home</a>
         </li>
-        <li [ngClass]="{active: isSelectedRoute('brew')}">
+        <li routerLinkActive="active">
             <a [routerLink]="['/brew']">Brew</a>
         </li>
     </ul>

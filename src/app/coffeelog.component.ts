@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NgClass } from '@angular/common';
-import { Routes, Router, RouteSegment, UrlSegment, OnActivate, ROUTER_DIRECTIVES } from '@angular/router';
+import { Router, ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router';
 import { BrewComponent } from './brew';
 
 import { HomeComponent } from './home/home.component';
@@ -13,18 +13,6 @@ import { HomeComponent } from './home/home.component';
   directives: [ROUTER_DIRECTIVES, NgClass],
 
 })
-
-@Routes([
-    { path: '/', component: HomeComponent },
-    { path: '/brew', component: BrewComponent}
-])
 export class CoffeelogAppComponent {
-  
-  constructor(private router: Router) {};
-
-  isSelectedRoute(routePath: string) {
-     let currentRoute = this.router.urlTree.firstChild(this.router.urlTree.root);
-     let segment = currentRoute == null ? '/' : currentRoute.segment;
-     return  segment == routePath;
-  }
+  constructor(private router: Router, private route: ActivatedRoute) {};
 }

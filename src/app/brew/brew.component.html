@@ -1,11 +1,11 @@
 <ul class="nav nav-pills">
-    <li [ngClass]="{active: isSelectedRoute('setup')}">
+    <li routerLinkActive="active">
         <a [routerLink]="['setup']">Setup</a>
     </li>
-    <li [ngClass]="{active: isSelectedRoute('execute')}">
+    <li routerLinkActive="active">
         <a [routerLink]="['execute']">Execute</a>
     </li>
-    <li [ngClass]="{active: isSelectedRoute('log')}">
+    <li routerLinkActive="active">
         <a [routerLink]="['log']">Log</a>
     </li>
 </ul>
