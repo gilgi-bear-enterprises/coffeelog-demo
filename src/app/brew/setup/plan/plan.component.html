@@ -5,6 +5,6 @@
 <h2>Plan</h2>
 
 <div>
-  <p>Temperature</p>
-  <input [(ngModel)]="brew.temperature">
+  <p>Temperature:</p>
+  <slider [(slideValue)]="brew.temperature" [minValue]=80 [maxValue]=100></slider> C
 </div>
