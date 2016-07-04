@@ -43,4 +43,8 @@ export class SliderComponent implements AfterViewInit {
       $(this.el.nativeElement).slider('value', this.slideValue);
       this.slideValueChange.emit(this.slideValue);
     }
+
+    forceChange(value: number) {
+      $(this.el.nativeElement).slider('value', value);
+    }
 }
