@@ -5,6 +5,12 @@
 <h2>Plan</h2>
 
 <div>
-  <p>Temperature</p>
-  <input [(ngModel)]="brew.temperature">
+  <p>Water temperature:</p>
+  <slider [(slideValue)]="brew.temperature" [minValue]=80 [maxValue]=100></slider> C
+  <linked-sliders
+    [(waterMass)]="brew.waterMass"
+    [(beansMass)]="brew.beansMass"
+    [(ratio)]="brew.ratio"></linked-sliders>
+  <p>Grind setting:</p>
+  <slider [(slideValue)]="brew.grindSetting" [minValue]=0 [maxValue]=30></slider>
 </div>

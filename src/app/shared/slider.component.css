@@ -1,0 +1,15 @@
+/* Styles go here */
+.block {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.slider {
+  width: 100px;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+input {
+  width: 25px;
+}

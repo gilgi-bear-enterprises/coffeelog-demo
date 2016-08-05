@@ -1,0 +1,6 @@
+<p>Water mass:</p>
+<slider #waterMassSlider [slideValue]="waterMass" (slideValueChange)="waterMassChanged($event, beansMassSlider)" [minValue]=200 [maxValue]=1000></slider> mL
+<p>Beans mass:</p>
+<slider #beansMassSlider [slideValue]="beansMass" (slideValueChange)="beansMassChanged($event, waterMassSlider)" [minValue]=0 [maxValue]=100></slider> g
+<p>Brew ratio:</p>
+<slider #ratioSlider [slideValue]="ratio" (slideValueChange)="ratioChanged($event, waterMassSlider)" [minValue]=0 [maxValue]=20></slider>
